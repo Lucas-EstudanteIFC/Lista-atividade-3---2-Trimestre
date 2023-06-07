@@ -18,15 +18,15 @@
         alert(`Valor Inválido encontrado.`);
     }
     else {
-        const transporte = prompt(`Você gostaria de um vale transporte? Responda S ou N.`).toUpperCase.replace("S", "1").replace("N", "0").trim()
+        const transporte = prompt(`Você gostaria de um vale transporte? Responda S ou N.`).toUpperCase().replace("S", "1").replace("N", "0").trim()
         if (transporte == 1) {
-            salario = salario*(94/100)+150;
+            salario = salario * (94 / 100) - 150;
             alert(`O seu salário tem um desconto de 6% e um adicional de R$150,00. O salário final é R$${salario.toFixed(2).replace(".", ",")}.`);
         }
         else {
-            const veículo = prompt (`Utiliza-se de um veículo próprio? Responda S ou N.`).toUpperCase.replace("S", "1").replace("N", "0").trim();
+            const veículo = prompt(`Utiliza-se de um veículo próprio? Responda S ou N.`).toUpperCase().replace("S", "1").replace("N", "0").trim();
             if (veículo == 1) {
-                salario = salario*(94/100)+200;
+                salario = salario * (94 / 100) - 200;
                 alert(`O seu salário tem um desconto de 6% e um adicional de R$200,00. O salário final é R$${salario.toFixed(2).replace(".", ",")}.`);
             }
             else {
@@ -35,7 +35,7 @@
 
         }
     }
-    
+
     // Saída
 
 </script>
