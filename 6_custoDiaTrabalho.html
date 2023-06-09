@@ -1,0 +1,48 @@
+<meta charset="UTF-8" />
+<script>
+    // Problema: Custo do Dia de Trabalho
+    /*
+    Peça para o programa perguntar ao usuário quantas viagens foram realizadas por dia e também qual o cargo que ocupa.
+    
+    Considere que o valor da diária é de R$ 100,00 (100).
+    
+    - Se o usuário ocupar o cargo de "Motorista" e realizou até 10 viagens, haverá um adicional de 20% (20/100).
+    - Se o usuário ocupar o cargo de "Motorista" e realizou mais de 10 viagens, haverá um adicional de 35% (35/100).
+    - Contudo, se o cargo do usuário for "Cobrador" e realizou até 10 viagens, não haverá adicional.
+    - Se o usuário ocupar o cargo de "Cobrador" e realizou mais de 10 viagens, haverá um adicional de 10% (10/100).
+    
+    Apresente em tela o cargo do usuário e também o valor final recebido pelas viagens realizadas.
+    */
+
+    // Entrada
+    const cargo = prompt(`Qual o cargo que você ocupa? Responda M para Motorista ou C para Cobrador.`).toUpperCase().trim();
+    const viagens = Number(prompt(`Quantas viagens realiza por dia?`).trim());
+
+    // Processamento
+    let valor = viagens * 100
+    if (cargo.length > 1) {
+        alert(`Valor inválido.`);
+    }
+    else {
+        if (cargo === "M" && viagens <= 10) {
+            valor = valor + valor * (20 / 100);
+            alert(`Você é um Motorista e recebe R$${valor.toFixed(2).replace(".", ",")} pelas viagens realizadas.`);
+        }
+        else if (cargo === "M" && viagens > 10) {
+            valor = valor + valor * (35 / 100);
+            alert(`Você é um Motorista e recebe R$${valor.toFixed(2).replace(".", ",")} pelas viagens realizadas.`);
+        }
+        else if (cargo === "C" && viagens <= 10) {
+            alert(`Você é um cobrador e recebe R$${valor.toFixed(2).replace(".", ",")} pelas viagens realizadas.`);
+        }
+        else if (cargo === "C" && viagens > 10) {
+            valor = valor + valor * (10 / 100);
+            alert(`Você é um cobrador e recebe R$${valor.toFixed(2).replace(".", ",")} pelas viagens realizadas.`);
+        }
+        else {
+            alert(`Você é um passageiro.`);
+        }
+    }
+    // Saída
+
+</script>
