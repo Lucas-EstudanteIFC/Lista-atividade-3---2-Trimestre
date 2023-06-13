@@ -12,9 +12,33 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const passagemSP = Number(prompt(`Informe o preço de uma passagem para São Paulo.`).replace(",", ".").trim());
+    const passagemRJ = Number(prompt(`Informe o preço de uma passagem para Rio de Janeiro.`).replace(",", ".").trim());
+    const hotelSP = Number(prompt(`Informe o preço do hotel em São Paulo.`).replace(",", ".").trim());
+    const hotelRJ = Number(prompt(`Informe o preço do hotel em Rio de Janeiro.`).replace(",", ".").trim());
+    const dias = Number(prompt(`Quantos dias pretende ficar no destino?`).replace(",", ".").trim());
 
+    // Processamento
+    if (isNaN(passagemSP) || isNaN(passagemRJ) || isNaN(hotelSP) || isNaN(hotelRJ) || isNaN(dias)) {
+        alert(`Valor inválido encontrado.`);
+    }
+    else {
+        let valorSP = passagemSP + hotelSP * dias;
+        let valorRJ = passagemRJ + hotelRJ * dias;
+        
+        if (valorSP < valorRJ) {
+            alert(`O destino final deverá ser São Paulo, com um preço de R$${valorSP.toFixed(2).replace(",", ".")}`);
+        }
+        else if (valorRJ < valorSP) {
+            alert(`O destino final deverá ser Rio de Janeiro, com um preço de R$${valorRJ.toFixed(2).replace(",", ".")}`);
+        }
+        else {
+            alert(`O destino final poderá ser qualquer opção, já que possuem o mesmo preço.`);
+        }
+    }
+
+
+    
     // Saída
 
 </script>
